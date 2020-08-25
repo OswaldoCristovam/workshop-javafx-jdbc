@@ -42,7 +42,7 @@ public class MainViewController implements Initializable {
 		loadView("/gui/About.fxml");
 	}
 
-	public void loadView(String absolutPath) {
+	public synchronized void loadView(String absolutPath) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absolutPath));
 			VBox newVBox = loader.load();
