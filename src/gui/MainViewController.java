@@ -47,7 +47,7 @@ public class MainViewController implements Initializable {
 		loadView("/gui/About.fxml", x -> {});
 	}
 
-	public synchronized <T> void loadView(String absolutPath, Consumer<T> initializeAction) {
+	public synchronized <T> void loadView(String absolutPath, Consumer<T> initializinAction) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absolutPath));
 			VBox newVBox = loader.load();
@@ -62,7 +62,7 @@ public class MainViewController implements Initializable {
 			mainVBox.getChildren().addAll(newVBox);
 			
 			T controller = loader.getController();
-			initializeAction.accept(controller);
+			initializinAction.accept(controller);
 		} 
 		catch (IOException e) {
 			Alerts.showAlert("ERROR", null, e.getMessage(), AlertType.ERROR);
